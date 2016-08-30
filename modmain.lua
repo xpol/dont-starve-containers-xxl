@@ -4,6 +4,9 @@ Assets = {
 	Asset('ATLAS', 'images/ui_backpack_5x10.xml')
 }
 
+
+local unpack, Vector3 = GLOBAL.unpack, GLOBAL.Vector3
+
 local function expandContainer(inst, x, y)
 	local slotpos = {}
 	for iy = 0, 9 do
