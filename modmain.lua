@@ -39,11 +39,11 @@ AddPrefabPostInit('backpack', function(inst)
 end)
 
 AddPrefabPostInit('treasurechest', function(inst)
-	expandContainer(inst, 0, -30)
+	expandContainer(inst, -225, -30)
 end)
 
 AddPrefabPostInit('icebox', function(inst)
-	expandContainer(inst, 0, -30)
+	expandContainer(inst, -225, -30)
 end)
 
 AddClassPostConstruct('widgets/invslot', function(self, num, atlas, bgim, owner, container)
