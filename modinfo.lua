@@ -1,5 +1,5 @@
 name = 'ContainersXXL'
-description = 'Increases Backpack, Icebox and Treasurechest to 50 slots.'
+description = 'Modify Backpack, Icebox and Treasurechest to 50 slots.'
 author = 'xpolife'
 version = '1.0'
 
