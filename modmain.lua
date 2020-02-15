@@ -1,17 +1,34 @@
 local fridge = GetModConfigData('fridge', false)
+local SIZE_NAME = GetModConfigData('size', 'XL')
 
 Assets = {
+	Asset('ATLAS', 'images/ui_backpack_5x5.xml')
 	Asset('ATLAS', 'images/ui_backpack_5x10.xml')
 }
 
 
 local unpack, Vector3 = GLOBAL.unpack, GLOBAL.Vector3
 
+local SIZES = {
+	XL = {
+		rows = 5,
+		atlas = 'images/ui_backpack_5x5.xml',
+		image = 'ui_backpack_5x5.tex',
+	},
+	XXL = {
+		rows = 10,
+		atlas = 'images/ui_backpack_5x10.xml',
+		image = 'ui_backpack_5x10.tex',
+	}
+}
+
+local conf = SIZES[SIZE_NAME] or SIZES.XL
+
 local function expandContainer(inst, x, y)
 	local slotpos = {}
-	for iy = 0, 9 do
+	for iy = 1, conf.rows do
 		for ix = 4,0,-1 do
-			slotpos[#slotpos+1] = Vector3(-75*ix + 130, -75*iy+ 245, 0)
+			slotpos[#slotpos+1] = Vector3(-75*ix + 130, -75*iy+ 170, 0)
 		end
 	end
 	local container = inst.components.container
@@ -20,8 +37,8 @@ local function expandContainer(inst, x, y)
 
 	container.widgetanimbank = nil
 	container.widgetanimbuild = nil
-	container.widgetbgatlas = 'images/ui_backpack_5x10.xml'
-	container.widgetbgimage = 'ui_backpack_5x10.tex'
+	container.widgetbgatlas = conf.atlas
+	container.widgetbgimage = conf.image
 
 	container.widgetpos = Vector3(x, y, 0)
 

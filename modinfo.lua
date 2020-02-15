@@ -1,5 +1,5 @@
 name = 'ContainersXXL'
-description = 'Modify Backpack, Icebox and Treasurechest to 50 slots.'
+description = 'Modify Backpack, Icebox and Treasurechest to 25 or 50 slots.'
 author = 'xpolife'
 version = '1.0.1'
 
@@ -17,6 +17,16 @@ icon = 'ContainersXXL.tex'
 
 configuration_options =
 {
+  {
+    name = 'rows',
+    label = 'Size',
+    options =
+    {
+      {description = 'XL(25)', data = 'XL'},
+      {description = 'XXL(50)', data = 'XXL'},
+    },
+    default = 'XL(25)',
+  },
   {
     name = 'fridge',
     label = 'Delay decay',
