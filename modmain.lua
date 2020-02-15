@@ -14,11 +14,13 @@ local SIZES = {
 		rows = 5,
 		atlas = 'images/ui_backpack_5x5.xml',
 		image = 'ui_backpack_5x5.tex',
+		offsetY = -120,
 	},
 	XXL = {
 		rows = 10,
 		atlas = 'images/ui_backpack_5x10.xml',
 		image = 'ui_backpack_5x10.tex',
+		offsetY = 0,
 	}
 }
 
@@ -28,7 +30,7 @@ local function expandContainer(inst, x, y)
 	local slotpos = {}
 	for iy = 1, conf.rows do
 		for ix = 4,0,-1 do
-			slotpos[#slotpos+1] = Vector3(-75*ix + 130, -75*iy + 320, 0)
+			slotpos[#slotpos+1] = Vector3(-75*ix + 130, -75*iy + 320 + conf.offsetY, 0)
 		end
 	end
 	local container = inst.components.container
