@@ -18,8 +18,8 @@ icon = 'ContainersXXL.tex'
 configuration_options =
 {
   {
-    name = 'rows',
-    label = 'Size',
+    name = 'size',
+    label = 'Bag Size',
     options =
     {
       {description = 'XL(25)', data = 'XL'},

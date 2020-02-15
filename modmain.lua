@@ -2,7 +2,7 @@ local fridge = GetModConfigData('fridge', false)
 local SIZE_NAME = GetModConfigData('size', 'XL')
 
 Assets = {
-	Asset('ATLAS', 'images/ui_backpack_5x5.xml')
+	Asset('ATLAS', 'images/ui_backpack_5x5.xml'),
 	Asset('ATLAS', 'images/ui_backpack_5x10.xml')
 }
 
@@ -28,7 +28,7 @@ local function expandContainer(inst, x, y)
 	local slotpos = {}
 	for iy = 1, conf.rows do
 		for ix = 4,0,-1 do
-			slotpos[#slotpos+1] = Vector3(-75*ix + 130, -75*iy+ 170, 0)
+			slotpos[#slotpos+1] = Vector3(-75*ix + 130, -75*iy + 320, 0)
 		end
 	end
 	local container = inst.components.container
