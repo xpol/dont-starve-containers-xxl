@@ -53,17 +53,31 @@ local function expandContainer(inst, x, y)
 	end
 end
 
-AddPrefabPostInit('backpack', function(inst)
-	expandContainer(inst, -115, -30)
-end)
+local packs = {
+	'backpack',
+	'piggyback',
+	'icepack',
+	'thatchpack',
+	'krampus_sack'
+}
 
-AddPrefabPostInit('treasurechest', function(inst)
-	expandContainer(inst, -225, -30)
-end)
+for _, bag in ipairs(packs) do
+	AddPrefabPostInit(bag, function(inst)
+		expandContainer(inst, -115, -30)
+	end)
+end
 
-AddPrefabPostInit('icebox', function(inst)
-	expandContainer(inst, -225, -30)
-end)
+local chests = {
+	'treasurechest',
+	'icebox',
+	'dragonflychest'
+}
+
+for _, chest in ipairs(chests) do
+	AddPrefabPostInit(chest, function(inst)
+		expandContainer(inst, -225, -30)
+	end)
+end
 
 AddClassPostConstruct('widgets/invslot', function(self, num, atlas, bgim, owner, container)
 	if container.invslottint then
