@@ -1,7 +1,7 @@
 name = 'ContainersXXL'
 description = 'Modify Backpack, Icebox and Treasurechest to 25 or 50 slots.'
 author = 'xpolife'
-version = '1.1.0'
+version = '1.1.1'
 
 forumthread = ''
 
